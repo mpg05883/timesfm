@@ -24,7 +24,7 @@ from safetensors.torch import load_file
 from torch.utils.data import Dataset
 
 from finetuning.finetuning_torch import FinetuningConfig, TimesFMFinetuner
-from timesfm import TimesFm, TimesFmCheckpoint, TimesFmHparams
+from demo import TimesFm, TimesFmCheckpoint, TimesFmHparams
 from timesfm.pytorch_patched_decoder import (PatchedTimeSeriesDecoder,
                                              TimesFMConfig)
 

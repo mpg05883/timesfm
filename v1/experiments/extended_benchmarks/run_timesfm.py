@@ -20,7 +20,7 @@ import time
 from absl import flags
 import numpy as np
 import pandas as pd
-import timesfm
+import demo
 
 from .utils import ExperimentHandler
 
@@ -98,8 +98,8 @@ def main():
     max_context_len = 2048
     context_dict = context_dict_v2
 
-  tfm = timesfm.TimesFm(
-      hparams=timesfm.TimesFmHparams(
+  tfm = demo.TimesFm(
+      hparams=demo.TimesFmHparams(
           backend="gpu",
           per_core_batch_size=32,
           horizon_len=128,
@@ -107,7 +107,7 @@ def main():
           context_len=max_context_len,
           use_positional_embedding=use_positional_embedding,
       ),
-      checkpoint=timesfm.TimesFmCheckpoint(huggingface_repo_id=model_path),
+      checkpoint=demo.TimesFmCheckpoint(huggingface_repo_id=model_path),
   )
   run_id = np.random.randint(100000)
   model_name = "timesfm"

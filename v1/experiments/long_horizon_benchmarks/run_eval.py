@@ -21,8 +21,8 @@ from absl import flags
 import chronos
 import numpy as np
 import pandas as pd
-import timesfm
-from timesfm import data_loader
+import demo
+from demo import data_loader
 import torch
 import tqdm
 
@@ -133,7 +133,7 @@ def eval():
   dataset = _DATASET.value
   data_path = DATA_DICT[dataset]["data_path"]
   freq = DATA_DICT[dataset]["freq"]
-  int_freq = timesfm.freq_map(freq)
+  int_freq = demo.freq_map(freq)
   boundaries = DATA_DICT[dataset]["boundaries"]
 
   data_df = pd.read_csv(open(data_path, "r"))
@@ -175,8 +175,8 @@ def eval():
         torch_dtype=torch.bfloat16,
     )
   else:
-    model = timesfm.TimesFm(
-        hparams=timesfm.TimesFmHparams(
+    model = demo.TimesFm(
+        hparams=demo.TimesFmHparams(
             backend="gpu",
             per_core_batch_size=32,
             horizon_len=128,
@@ -184,7 +184,7 @@ def eval():
             context_len=_CONTEXT_LEN.value,
             use_positional_embedding=False,
         ),
-        checkpoint=timesfm.TimesFmCheckpoint(huggingface_repo_id=model_path),
+        checkpoint=demo.TimesFmCheckpoint(huggingface_repo_id=model_path),
     )
   smape_run_losses = []
   mse_run_losses = []

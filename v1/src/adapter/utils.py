@@ -37,7 +37,7 @@ from adapter.lora_layers import (
     LoraCombinedQKVProjection,
     LoraLinear,
 )
-from timesfm import TimesFm
+from demo import TimesFm
 
 
 def get_adapter_params(

@@ -26,7 +26,7 @@ import sys
 
 try:
     from timesfm.timesfm_jax import TimesFmJax as TimesFm
-    from timesfm import data_loader
+    from demo import data_loader
 
     print(f"Loaded Jax TimesFM, likely because python version is {sys.version}.")
 except Exception as _:

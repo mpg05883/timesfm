@@ -35,7 +35,7 @@ from tqdm import tqdm
 from typing_extensions import Annotated
 
 from adapter.utils import get_adapter_params, load_adapter_layer
-from timesfm import TimesFm, data_loader, patched_decoder
+from demo import TimesFm, data_loader, patched_decoder
 
 NestedMap = py_utils.NestedMap
 
