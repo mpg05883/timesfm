@@ -23,7 +23,7 @@ class TimesFmPredictor:
         See here for the original definition:
         https://github.com/SalesforceAIResearch/gift-eval/blob/main/notebooks/timesfm2p5.ipynb
         """
-        self.tfm = tfm
+        self.tfm = tfm  # TODO: Initialize default tfm and remove tfm from ctor
         self.prediction_length = prediction_length
         self.quantiles = list(np.arange(1, 10) / 10.0)
 
