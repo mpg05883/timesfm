@@ -16,5 +16,6 @@
 
 from .configs import ForecastConfig
 from .timesfm_2p5 import timesfm_2p5_torch
+from .gluonts import TimesFmPredictor
 
 TimesFM_2p5_200M_torch = timesfm_2p5_torch.TimesFM_2p5_200M_torch
