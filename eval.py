@@ -55,7 +55,7 @@ metrics = [
 ]
 
 print(f"Creating predictor with prediction length {dataset.prediction_length}")
-predictor = timesfm.TimesFmPredictor(
+predictor = timesfm.TimesFMPredictor(
             tfm=tfm,
             prediction_length=dataset.prediction_length,
         )
